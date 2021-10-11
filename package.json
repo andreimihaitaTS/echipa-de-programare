@@ -1,0 +1,19 @@
+{
+  "name": "echipa-de-programare",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": "git+https://github.com/andreimihaitaTS/echipa-de-programare.git",
+  "author": "andreimihaitaTS <90057478+andreimihaitaTS@users.noreply.github.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andreimihaitaTS/echipa-de-programare/issues"
+  },
+  "homepage": "https://github.com/andreimihaitaTS/echipa-de-programare#readme",
+  "devDependencies": {
+    "jest": "^27.2.5"
+  }
+}
