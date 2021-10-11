@@ -19,26 +19,50 @@ module.exports = class LinkedList {
         this.tail = node
     }
     pop() {
-        let node = this.find(this.length - 1);
-        node.next = null;
-        this.tail = node;
-        this.length--;
-      }
-    get(index) {
-        let node = this.find(index);
-        return node.value;
+        let node = this.find(this.length - 1)
+        const lastNode = node.next
+        node.next = null
+        this.tail = node
+        this.length--
+        return lastNode.value
     }
-    
-
-
-
+    get(index) {
+        let node = this.find(index)
+        return node.value
+    }
+    delete(index) {
+        if (index === 0) {
+            const head = this.head
+            if (head) {
+                this.head = head.next
+            } else {
+                this.head = null
+            }
+            this.length--
+            return head.value
+        }
+        const node = this.find(index - 1)
+        const excise = node.next
+        if (!excise) return null
+        node.next = excise.next
+        if (!node.next.next) this.tail = node.next
+        this.length--
+        return excise.value
+    }
+    unshift(value) {
+        let formerHead = this.head
+        let newNode = new Node(value)
+        this.head = newNode
+        this.head.next = formerHead
+        this.length++
+    }
 
     find(index) {
-        let node = this.head;
+        let node = this.head
         for (let i = 0; i < index - 1; i++) {
-          node = node.next;
+            node = node.next
         }
-        return node;
+        return node
     }
 }
 
