@@ -18,6 +18,28 @@ module.exports = class LinkedList {
         }
         this.tail = node
     }
+    pop() {
+        let node = this.find(this.length - 1);
+        node.next = null;
+        this.tail = node;
+        this.length--;
+      }
+    get(index) {
+        let node = this.find(index);
+        return node.value;
+    }
+    
+
+
+
+
+    find(index) {
+        let node = this.head;
+        for (let i = 0; i < index - 1; i++) {
+          node = node.next;
+        }
+        return node;
+    }
 }
 
 class Node {

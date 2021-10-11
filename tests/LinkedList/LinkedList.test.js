@@ -17,4 +17,17 @@ describe('test', () => {
         list.pop()
         expect(list.length).toEqual(19)
     })
+    test('get element by index', () => {
+        expect(list.get(6)).toEqual(12);
+        expect(list.get(8)).toEqual(16);
+    })
+    test('delete', () => { 
+        const length = list.length;
+        list.delete(2);
+        expect(list.length).toEqual(length-1);
+        expect(list.get(2)).toEqual(6);
+        list.delete(4);
+        expect(list.length).toEqual(length-2);
+        expect(list.get(4)).toEqual(12);
+    })
 })
